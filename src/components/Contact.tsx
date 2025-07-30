@@ -22,18 +22,11 @@ const Contact = () => {
       [name]: value
     }));
   };
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   // Handle form submission here
-  //   toast.success("Message sent successfully! I'll get back to you soon.");
-  //   setFormData({ name: "", email: "", subject: "", message: "" });
-  // };
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://localhost:5000/api/contact", {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
