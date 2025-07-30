@@ -4,8 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Set the correct base path for deployment — use "/" for root
-  base: "/",
+  base: "/", // ✅ this is correct for Vercel root deploy
 
   server: {
     host: "::",
@@ -23,3 +22,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
